@@ -27,11 +27,6 @@ const imgCollection = document.getElementsByClassName("img");
 // rimuovo la classe d-none alla prima immagine
 imgCollection[counter].classList.remove("d-none");
 
-// 8.
-    btnTop.classList.add("d-none");
-
-
-
 
 // quando sono in hover sullo slider disattivo setInterval e uso i bottoni /////
     
@@ -48,20 +43,21 @@ btnBottom.addEventListener('click', scrollBottom);
 
 function scrollBottom(){
     imgCollection[counter++].classList.add("d-none");
-    imgCollection[counter].classList.remove("d-none");
-
-    btnTop.classList.remove("d-none");
-    if(counter === images.length - 1){
-        btnBottom.classList.add("d-none");
+    
+    if(counter === images.length){
+        counter = 0;
     }
+    imgCollection[counter].classList.remove("d-none");
+    btnTop.classList.remove("d-none");
+    
 }
 
 function scroolTop(){
     imgCollection[counter--].classList.add("d-none");
+    if(counter < 0){
+        counter = images.length - 1;
+    }
     imgCollection[counter].classList.remove("d-none");
 
     btnBottom.classList.remove("d-none");
-    if(counter === 0){
-        btnTop.classList.add("d-none");
-    }
 }
