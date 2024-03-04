@@ -36,14 +36,14 @@ imgCollection[counter].classList.remove("d-none");
 // quando sono in hover sullo slider disattivo setInterval e uso i bottoni /////
     
 // sopra decremento
-btnTop.addEventListener('click', pressTop);
+btnTop.addEventListener('click', scroolTop);
 
 // sotto incremento
-btnBottom.addEventListener('click', pressBottom);
+btnBottom.addEventListener('click', scrollBottom);
 
 
 // FUNCTIONS //////
-function pressBottom(){
+function scrollBottom(){
     imgCollection[counter++].classList.add("d-none");
     imgCollection[counter].classList.remove("d-none");
 
@@ -53,7 +53,7 @@ function pressBottom(){
     }
 }
 
-function pressTop(){
+function scroolTop(){
     imgCollection[counter--].classList.add("d-none");
     imgCollection[counter].classList.remove("d-none");
 
