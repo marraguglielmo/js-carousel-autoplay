@@ -10,5 +10,6 @@ Per evitare conflitti con lo scroll manuale, quando il mouse si trova sopra lo s
 ## Svolgimento
 
 1. inserisco i click per scorrere avanti e indietro in due funzioni
-2. con un set `setInterval` creo il loop infinito dello scroll verso il basso
-3.
+2. imposto di default il setInterval di scrollBottom ogni 3s
+3. quando vado in hover sullo slider interrompo il `setInterval scrollBottom` con `clearInterval`, in questo modo posso usare i bottoni per scrollare in autonomia
+4. quando non sono più in hover riattivo il `setInterval scrollBottom`

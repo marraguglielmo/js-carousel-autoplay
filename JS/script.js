@@ -2,8 +2,10 @@
 const imgWrapper = document.querySelector('.img-wrapper');
 const btnTop = document.querySelector(".top")
 const btnBottom = document.querySelector(".bottom");
+const slider = document.querySelector('.slider');
 // 4. inizializzo il counter
 let counter = 0;
+let pressBottom;
 
 // 1.
 const images = [
@@ -28,18 +30,26 @@ const imgCollection = document.getElementsByClassName("img");
 imgCollection[counter].classList.remove("d-none");
 
 
-// quando sono in hover sullo slider disattivo setInterval e uso i bottoni /////
-    
+
 // sopra decremento
 btnTop.addEventListener('click', scroolTop);
 
 // sotto incremento
 btnBottom.addEventListener('click', scrollBottom);
 
+pressBottom = setInterval(scrollBottom, 3000);
+
+// quando sono in hover sullo slider disattivo setInterval e uso i bottoni
+slider.addEventListener('mouseover', function(){
+    clearInterval(pressBottom);
+});
+// quando non sono più in hover sullo slider faccio ripartire il setInterval
+slider.addEventListener('mouseout', function(){
+    pressBottom = setInterval(scrollBottom, 1000);
+})
 
 // FUNCTIONS //////
 
-setInterval(scrollBottom, 3000);
 
 function scrollBottom(){
     imgCollection[counter++].classList.add("d-none");
