@@ -39,7 +39,7 @@ btnBottom.addEventListener('click', scrollBottom);
 
 // FUNCTIONS //////
 
-// setInterval(scrollBottom, 3000);
+setInterval(scrollBottom, 3000);
 
 function scrollBottom(){
     imgCollection[counter++].classList.add("d-none");
