@@ -10,3 +10,5 @@ Per evitare conflitti con lo scroll manuale, quando il mouse si trova sopra lo s
 ## Svolgimento
 
 1. inserisco i click per scorrere avanti e indietro in due funzioni
+2. con un set `setInterval` creo il loop infinito dello scroll verso il basso
+3.
